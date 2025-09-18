@@ -12,4 +12,4 @@
         <Button Text="Login" Command="{Binding LoginCommand}" />
         <Label Text="{Binding LoginMessage}" TextColor="Red" />
     </StackLayout>
-</ContentPage>
+</ContentPage> 
