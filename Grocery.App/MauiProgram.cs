@@ -22,7 +22,7 @@ namespace Grocery.App
                 });
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
             builder.Services.AddSingleton<IGroceryListService, GroceryListService>();
             builder.Services.AddSingleton<IGroceryListItemsService, GroceryListItemsService>();
@@ -36,11 +36,16 @@ namespace Grocery.App
             builder.Services.AddSingleton<IClientRepository, ClientRepository>();
             builder.Services.AddSingleton<GlobalViewModel>();
 
-            builder.Services.AddTransient<GroceryListsView>().AddTransient<GroceryListViewModel>();
+            // Views + ViewModels
+            builder.Services.AddTransient<GroceryListsView>().AddTransient<GroceryListItemsViewModel>();
             builder.Services.AddTransient<GroceryListItemsView>().AddTransient<GroceryListItemsViewModel>();
             builder.Services.AddTransient<ProductView>().AddTransient<ProductViewModel>();
             builder.Services.AddTransient<ChangeColorView>().AddTransient<ChangeColorViewModel>();
             builder.Services.AddTransient<LoginView>().AddTransient<LoginViewModel>();
+
+            // Shell registreren zodat LoginView later kan navigeren naar AppShell
+            builder.Services.AddSingleton<AppShell>();
+
             return builder.Build();
         }
     }

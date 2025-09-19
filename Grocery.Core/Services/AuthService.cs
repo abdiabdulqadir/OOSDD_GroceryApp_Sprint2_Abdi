@@ -15,8 +15,7 @@ namespace Grocery.Core.Services
 
         public Client? Login(string email, string password)
         {
-            var client = _clientService.GetByEmail(email);
-
+            var client = _clientService.GetAll().FirstOrDefault(c => c.EmailAddress == email);
             if (client != null && PasswordHelper.VerifyPassword(password, client.Password))
             {
                 return client;
