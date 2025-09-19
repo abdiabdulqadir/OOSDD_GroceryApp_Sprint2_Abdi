@@ -10,7 +10,7 @@ namespace Grocery.App
             MainPage = view; // Start met login
         }
     }
-    public partial class App : Application
+    public partial class App : Application 
     {
         public App()
         {
