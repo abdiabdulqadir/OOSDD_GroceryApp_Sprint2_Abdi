@@ -1,4 +1,5 @@
 using Grocery.App.ViewModels;
+using System;
 
 namespace Grocery.App.Views;
 
@@ -9,4 +10,5 @@ public partial class LoginView : ContentPage
         InitializeComponent();
 		BindingContext = viewModel;
 	}
+	
 } 

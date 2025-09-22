@@ -44,7 +44,8 @@ namespace Grocery.App
             builder.Services.AddTransient<LoginView>().AddTransient<LoginViewModel>();
 
             // Shell registreren zodat LoginView later kan navigeren naar AppShell
-            builder.Services.AddSingleton<AppShell>();
+            //builder.Services.AddSingleton<AppShell>();
+            //Console.WriteLine("hello");
 
             return builder.Build();
         }
